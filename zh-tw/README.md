@@ -14,6 +14,7 @@
 
 **通知**：DDIA [**第二版**](https://github.com/Vonng/ddia/tree/v2) 正在翻譯中 (當前 [`v2`](https://github.com/Vonng/ddia/tree/v2)分支)，歡迎加入並提出您的寶貴意見！
 
+> **Contrib 指南**：目前放出的三章中，如果您對任意一個 Section （以 `###` 三級標題）的翻譯感興趣，建立一個 Issue 宣告鎖定，然後直接 PR 即可。
 
 
 --------
