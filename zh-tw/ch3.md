@@ -70,7 +70,7 @@ The pros and cons of document and relational data have been debated extensively;
 
 ### 物件關係不匹配
 
-目前大多數應用程式開發都使用面向物件的程式語言來開發，這導致了對 SQL 資料模型的普遍批評：如果資料儲存在關係表中，那麼需要一個笨拙的轉換層，處於應用程式程式碼中的物件和表，行，列的資料庫模型之間。模型之間的不連貫有時被稱為 **阻抗不匹配（impedance mismatch）**[^i]。
+目前大多數應用程式開發都使用物件導向的程式語言來開發，這導致了對 SQL 資料模型的普遍批評：如果資料儲存在關係表中，那麼需要一個笨拙的轉換層，處於應用程式程式碼中的物件和表，行，列的資料庫模型之間。模型之間的不連貫有時被稱為 **阻抗不匹配（impedance mismatch）**[^i]。
 
 
 Much application development today is done in object-oriented programming languages, which leads to a common criticism of the SQL data model: if data is stored in relational tables, an awkward translation layer is required between the objects in the application code and the database model of tables, rows, and columns. The disconnect between the models is sometimes called an *impedance mismatch*.
