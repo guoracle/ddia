@@ -10,41 +10,34 @@ mkdir -p "$OUTPUT_DIR"
 
 convert_to_epub() {
 	# convert all EPUB files into a single EPUB book
-	OUTPUT_BOOK="$OUTPUT_DIR/ddia.epub"
+	OUTPUT_BOOK="$OUTPUT_DIR/ddia.pdf"
 	rm -f "$OUTPUT_BOOK"
 	echo "Converting all EPUB files into $OUTPUT_BOOK..."
 
 	local meta_file=${INPUT_DIR}/metadata.yaml
 	local css_file=${INPUT_DIR}/js/epub.css
 
-	pandoc -o "$OUTPUT_BOOK" --metadata-file="$meta_file" \
-		--toc-depth=2 \
-		--top-level-division=chapter \
-		--file-scope=true \
-		--css="$css_file" \
-		--webtex \
-		--wrap=preserve \
-		"${INPUT_DIR}"/SUMMARY.md \
-		"${INPUT_DIR}"/README.md \
-		"${INPUT_DIR}"/preface.md \
-		"${INPUT_DIR}"/part-i.md \
-		"${INPUT_DIR}"/ch1.md \
-		"${INPUT_DIR}"/ch2.md \
-		"${INPUT_DIR}"/ch3.md \
-		"${INPUT_DIR}"/ch4.md \
-		"${INPUT_DIR}"/part-ii.md \
-		"${INPUT_DIR}"/ch5.md \
-		"${INPUT_DIR}"/ch6.md \
-		"${INPUT_DIR}"/ch7.md \
-		"${INPUT_DIR}"/ch8.md \
-		"${INPUT_DIR}"/ch9.md \
-		"${INPUT_DIR}"/part-iii.md \
-		"${INPUT_DIR}"/ch10.md \
-		"${INPUT_DIR}"/ch11.md \
-		"${INPUT_DIR}"/ch12.md \
-		"${INPUT_DIR}"/colophon.md \
-		"${INPUT_DIR}"/glossary.md
+    ${INPUT_DIR}/mergemd.sh
 
+    pandoc -o $OUTPUT_BOOK \
+	    --metadata-file="$meta_file" \
+        --toc-depth=2 \
+        --top-level-division=chapter \
+        --pdf-engine=xelatex \
+        --from markdown \
+		--file-scope \
+        --template=${INPUT_DIR}/template.tex \
+        --highlight-style=pygments \
+        -V colorlinks=true \
+        -V linkcolor=blue \
+        -V urlcolor=blue \
+        -V lang=zh-CN \
+        -V geometry:margin=1in \
+        --css="$css_file" \
+        --webtex \
+        --wrap=preserve \
+        "${OUTPUT_DIR}"/merged.md
+         
 	echo "Converted EPUB book created at $OUTPUT_BOOK."
 }
 

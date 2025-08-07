@@ -1,8 +1,5 @@
----
-title: 贡献者
-weight: 800
-breadcrumbs: false
----
+# 贡献者
+
 
 ## 译者
 

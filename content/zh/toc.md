@@ -1,12 +1,8 @@
----
-title: "目录"
-linkTitle: "目录"
-weight: 10
-breadcrumbs: false
----
+# 目录
 
 
-![](/img/title.png)
+
+![](./img/title.png)
 
 ##  [序言](/preface)
 
@@ -89,4 +85,4 @@ breadcrumbs: false
 
 ### [后记](/colophon)
 
-![](/img/featured.jpg)
+![](./img/featured.jpg)
