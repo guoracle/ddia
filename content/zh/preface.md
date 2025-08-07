@@ -1,8 +1,5 @@
----
-title: 序言
-weight: 50
-breadcrumbs: false
----
+# 序言
+
 
 
 如果近几年从业于软件工程，特别是服务器端和后端系统开发，那么你很有可能已经被大量关于数据存储和处理的时髦词汇轰炸过了： NoSQL！大数据！Web-Scale！分片！最终一致性！ACID！CAP 定理！云服务！MapReduce！实时！
