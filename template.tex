@@ -1,0 +1,140 @@
+\documentclass{book}
+
+% --- 字体设置 ---
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{longtable}
+\usepackage{booktabs}
+% 不再加载 unicode-math，以避免 \setmathfont 和数学符号缺失
+% \usepackage{unicode-math}
+
+% 设置字体
+\setmainfont{mononoki}
+\setsansfont{Noto Sans Mono}
+\setmonofont{Noto Sans Mono}
+\setCJKmainfont{Noto Sans CJK SC}
+\setCJKsansfont{Noto Sans CJK SC}
+\setCJKmonofont{Noto Sans Mono CJK SC}
+
+\usepackage[a4paper,inner=2.5cm,outer=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+
+% 设置颜色与背景色
+\usepackage{xcolor}
+\usepackage{pagecolor}
+\definecolor{mypagegreen}{RGB}{204,255,204}
+\pagecolor{mypagegreen}
+
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{framed}
+\usepackage{fvextra}
+\usepackage{adjustbox}
+\usepackage{fancyhdr}
+
+
+% 图片默认宽度设置
+\let\Oldincludegraphics\includegraphics
+\renewcommand{\includegraphics}[2][]{%
+  \Oldincludegraphics[width=\linewidth,keepaspectratio,#1]{#2}}
+
+% 高亮代码块设置
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+\newenvironment{Shaded}{%
+  \definecolor{shadecolor}{RGB}{248,248,248}%
+  \setlength{\FrameSep}{0pt}%
+  \begin{snugshade}%
+}{%
+  \end{snugshade}%
+}
+\BeforeBeginEnvironment{Highlighting}{\begin{Shaded}}
+\AfterEndEnvironment{Highlighting}{\end{Shaded}}
+
+% Pandoc生成的高亮命令定义
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.25,0.50,0.56}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.63,0.00,0.00}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.63,0.00,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.63,0.00,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\ImportTok}[1]{\NormalTok{#1}}
+\newcommand{\DocumentationTok}[1]{\CommentTok{#1}}
+\newcommand{\AnnotationTok}[1]{\CommentTok{#1}}
+\newcommand{\CommentVarTok}[1]{\CommentTok{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\NormalTok{#1}}
+\newcommand{\VerbatimStringTok}[1]{\StringTok{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\ExtensionTok}[1]{\NormalTok{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.00,0.00,0.50}{#1}}
+
+% Pandoc 无序列表间距压缩
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% 图片路径
+\graphicspath{{./img/}}
+
+% 支持章节样式调整
+%\usepackage{titlesec}
+%\titleformat{$title$}
+%  {\normalfont\Large\bfseries}
+%  {\thesection}{1em}{}
+
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries}{}{0pt}{\Huge}
+
+
+
+% 但由于你不想显示“Chapter”，重定义 \@chapapp 为空即可
+
+
+
+% 元信息
+\title{$title$}
+\author{$author$}
+\date{$date$}
+% 添加页眉信息
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\nouppercase{\leftmark}}
+\fancyfoot[C]{\thepage}
+
+
+\begin{document}
+
+\maketitle
+\makeatletter
+\renewcommand{\@chapapp}{}
+\renewcommand{\chaptermark}[1]{
+  \markboth{#1}{}
+}
+\makeatother
+
+
+
+
+
+$if(subtitle)$
+{\centering\large $subtitle$\par}
+\vspace{1em}
+$endif$
+
+$body$
+
+\end{document}

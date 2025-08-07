@@ -1,10 +1,5 @@
----
-title: 设计数据密集型应用
-linkTitle: DDIA
-cascade:
-  type: docs
-breadcrumbs: false
----
+# 设计数据密集型应用
+
 
 
 **作者**： [Martin Kleppmann](https://martin.kleppmann.com)，[《Designing Data-Intensive Applications 2nd Edition》](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/ch01.html) ： 英国剑桥大学分布式系统研究员，演讲者，博主和开源贡献者，软件工程师和企业家，曾在 LinkedIn 和 Rapportive 负责数据基础架构。
